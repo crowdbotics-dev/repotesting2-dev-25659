@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Timert
-from .serializers import TimertSerializer
+from home.models import Rite, Timert
+from .serializers import RiteSerializer, TimertSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +41,12 @@ class TimertViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Timert.objects.all()
+
+
+class RiteViewSet(viewsets.ModelViewSet):
+    serializer_class = RiteSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Rite.objects.all()
