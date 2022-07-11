@@ -14,3 +14,7 @@ class Rite(models.Model):
         null=True,
         blank=True,
     )
+    company = models.TextField(
+        null=True,
+        blank=True,
+    )
