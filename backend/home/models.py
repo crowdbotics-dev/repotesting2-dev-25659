@@ -10,3 +10,7 @@ class Timert(models.Model):
 class Rite(models.Model):
     "Generated Model"
     username = models.TextField()
+    address = models.TextField(
+        null=True,
+        blank=True,
+    )
